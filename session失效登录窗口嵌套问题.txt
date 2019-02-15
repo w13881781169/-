@@ -1,0 +1,12 @@
+在登录界面加入如下代码
+
+<script>
+    /**
+    	1、self:当前窗口对象（如果是在iframe里，则为该框架的窗口对象）
+		2、top:父窗口对象
+		3、location:该对象包含当前url信息，拥有多个属性。默认属性为 location.href,表示整个url，即如果设置location="http://www.ddd.cn",则等同于location.href="http://www.ddd.cn".
+    */
+	if (self != top) {
+		top.location = self.location;  //iframe中窗口对象转换成父窗口对象
+	} 
+</script>
